@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurations>
+  <schema version="1" />
+  <configuration type="install" lcid="" dialog_caption="Know Your Subject Installer" dialog_message="In order to install Know Your Subject you must first upgrade these components:" dialog_bitmap="#APPPATH\banner.bmp" install_caption="Install" cancel_caption="Close" status_installed=" (Installed)" status_notinstalled="" failed_exec_command_continue="Failed to install %s. Continue with others components?" installation_completed="Know Your Subject required components installed successfully !" installing_component_wait="Installing %s . Wait, this operation could take some time ..." reboot_required="To continue the installation you must restart your computer. Restart now?" advanced_caption="Advanced" dialog_selector_cancel="Cancel" dialog_selector_caption="Components List" dialog_selector_message="Select the components to install." dialog_selector_ok="OK" dialog_otherinfo_caption="" dialog_otherinfo_link="" complete_command="" auto_close_if_installed="True" os_filter_greater="" os_filter_smaller="" os_filter_not_match_message="This setup cannot run under the current operating system!">
+    <components>
+      <component os_filter_greater="" os_filter_smaller="80" os_filter_lcid="" type="cmd" installcompletemessage="" mustreboot="False" description="Microsoft Internet Explorer 6 Sp1" note="English - Standard - Internet Explorer 6Sp1 English (IE 5.01 Required)" command="&quot;#APPPATH\IE6.0Sp1\ie6setup.exe&quot;">
+        <installedcheck type="check_registry_value" path="SOFTWARE\Microsoft\Internet Explorer" fieldname="Version" fieldvalue="5.00.2920.0000" fieldtype="REG_SZ" comparison="version" rootkey="HKEY_LOCAL_MACHINE" />
+      </component>
+      <component os_filter_greater="" os_filter_smaller="45" os_filter_lcid="" type="cmd" installcompletemessage="" mustreboot="True" description="Microsoft .NET Framework 2.0" note=".NET Framework 2.0 for all OS before Win2000, require a reboot." command="&quot;#APPPATH\SupportFiles\dotNet2.0\English\dotnetfx.exe&quot; /q:a /c:&quot;install /l /qb&quot;">
+        <installedcheck type="check_registry_value" path="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" fieldname="Install" fieldvalue="1" fieldtype="REG_DWORD" comparison="match" rootkey="HKEY_LOCAL_MACHINE" />
+      </component>
+      <component os_filter_greater="44" os_filter_smaller="90" os_filter_lcid="" type="cmd" installcompletemessage="" mustreboot="False" description="Microsoft .NET Framework 2.0" note=".NET Framework 2.0 for Windows 2000/XP/2003" command="&quot;#APPPATH\dotNet2.0\dotnetfx.exe&quot; /q:a /c:&quot;install /l /qb&quot;">
+        <installedcheck type="check_registry_value" path="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" fieldname="Install" fieldvalue="1" fieldtype="REG_DWORD" comparison="match" rootkey="HKEY_LOCAL_MACHINE" />
+      </component>
+      <component os_filter_greater="" os_filter_smaller="45" os_filter_lcid="" type="cmd" installcompletemessage="" mustreboot="True" description="Microsoft DirectX 9C" note="Direct X 9C  for Win9X" command="&quot;#APPPATH\DirectX_9C\dxsetup.exe&quot; -q">
+        <installedcheck type="check_registry_value" path="SOFTWARE\Microsoft\DirectX" fieldname="Version" fieldvalue="4.09.00.0904" fieldtype="REG_SZ" comparison="version" rootkey="HKEY_LOCAL_MACHINE" />
+      </component>
+      <component os_filter_greater="44" os_filter_smaller="" os_filter_lcid="" type="cmd" installcompletemessage="" mustreboot="False" description="Microsoft DirectX 9C" note="Direct X 9C  for Win2000/XP/2003" command="&quot;#APPPATH\DirectX_9C\dxsetup.exe&quot; -q">
+        <installedcheck type="check_registry_value" path="SOFTWARE\Microsoft\DirectX" fieldname="Version" fieldvalue="4.09.00.0904" fieldtype="REG_SZ" comparison="version" rootkey="HKEY_LOCAL_MACHINE" />
+      </component>
+    </components>
+  </configuration>
+</configurations>
